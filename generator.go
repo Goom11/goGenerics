@@ -11,6 +11,11 @@ var types = []string{
 	"string",
 }
 
+func genFilter(t string) {
+	filterTemplate := fmt.Sprintf("func Filter%s(l []%s, p func(%s) bool) []%s {\n\tvar b []%s\n\tthese := l\n\tfor len(these) != 0 {\n\t\tif p(these[0]) {\n\t\t\tb = append(b, these[0])\n\t\t}\n\t\tthese = these[1:]\n\t}\n\treturn b\n}\n", t, t, t, t, t)
+	fmt.Println(filterTemplate)
+}
+
 func genMap(t1 string, t2 string) {
 	mapTemplate := fmt.Sprintf("func Map%s%s(l []%s, f func(%s) %s) []%s {\n\tvar b []%s\n\tthese := l\n\tfor len(these) != 0 {\n\t\tb = append(b, f(these[0]))\n\t\tthese = these[1:]\n\t}\n\treturn b\n}\n", t1, t2, t1, t1, t2, t2, t2)
 	fmt.Println(mapTemplate)
@@ -36,6 +41,7 @@ func main() {
 	fmt.Println("")
 	for _, t := range types {
 		genSelf(t)
+		genFilter(t)
 	}
 	for _, t1 := range types {
 		for _, t2 := range types {
