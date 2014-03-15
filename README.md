@@ -19,7 +19,6 @@ This provides a temporary hack by providing all possible combinations of common 
 3. Enjoy, Contribute, Be Merry!
 
 ### TODO:
- + map
  + filter/remove/partition
  + takeWhile/dropWhile/span
  + count
@@ -57,5 +56,21 @@ func mul(x int, y int) int {
 
 func product(l []int) int {
 	return generics.FoldLeftintint(l, 1, mul)
+}
+
+func double(x int) int {
+	return 2 * x
+}
+
+func doubleList(x []int) []int {
+	return Mapintint(x, double)
+}
+
+func length(x string) int {
+	return len(x)
+}
+
+func stringsToLengths(x []string) []int {
+	return Mapstringint(x, length)
 }
 ```
