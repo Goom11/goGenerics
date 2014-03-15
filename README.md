@@ -14,7 +14,8 @@ This provides a temporary hack by providing all possible combinations of common 
 
 ### How To Use:
 1. Change generator.go's global variable 'types' to include all the types you need functions for
-2. Build and run, take output and package for personal use
+2. Generated functions will be of the form FunctionType1Type2Type3... (see example code for more info)
+2. Build and run, take output and use from personal package
 3. Enjoy, Contribute, Be Merry!
 
 ### TODO:
@@ -30,6 +31,17 @@ This provides a temporary hack by providing all possible combinations of common 
 
 ```
 import "generics"
+
+func addStrLen(x int, y string) int {
+    return x + len(y)
+}
+
+//Format:
+//FoldLeftType1Type2 : f(Type2, Type1) -> Type2
+
+func sumStringLengths(l []string) int {
+	return generics.FoldLeftstringint(l, 0, addStrLen)
+}
 
 func add(x int, y int) int {
 	return x + y
