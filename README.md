@@ -11,6 +11,7 @@ This provides a temporary hack by providing all possible combinations of common 
 ### Currently Implemented:
 1. Self (x => x)
 2. FoldLeft (list z function => result)
+3. Map (list function => newList)
 
 ### How To Use:
 1. Change generator.go's global variable 'types' to include all the types you need functions for
