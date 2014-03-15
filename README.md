@@ -12,6 +12,7 @@ This provides a temporary hack by providing all possible combinations of common 
 1. Self (x => x)
 2. FoldLeft (list z function => result)
 3. Map (list function => newList)
+4. Filter (list predicate => newList)
 
 ### How To Use:
 1. Change generator.go's global variable 'types' to include all the types you need functions for
@@ -56,7 +57,7 @@ func double(x int) int {
 }
 
 func doubleList(x []int) []int {
-	return Mapintint(x, double)
+	return generics.Mapintint(x, double)
 }
 
 func length(x string) int {
@@ -64,12 +65,20 @@ func length(x string) int {
 }
 
 func stringsToLengths(x []string) []int {
-	return Mapstringint(x, length)
+	return generics.Mapstringint(x, length)
+}
+
+func isEven(x int) bool {
+	return x % 2 == 0
+}
+
+func getEvens(l []int) []int {
+	return generics.Filterint(l, isEven)
 }
 ```
 
 ### TODO:
- + filter/remove/partition
+ + (filter)/remove/partition
  + takeWhile/dropWhile/span
  + count
  + forall/exists
