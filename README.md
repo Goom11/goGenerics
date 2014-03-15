@@ -29,7 +29,7 @@ This provides a temporary hack by providing all possible combinations of common 
 
 ### Examples:
 
-```
+```go
 import "generics"
 
 func addStrLen(x int, y string) int {
