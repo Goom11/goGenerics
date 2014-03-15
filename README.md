@@ -19,14 +19,6 @@ This provides a temporary hack by providing all possible combinations of common 
 2. Build and run, take output and use from personal package
 3. Enjoy, Contribute, Be Merry!
 
-### TODO:
- + filter/remove/partition
- + takeWhile/dropWhile/span
- + count
- + forall/exists
- + zip?
- + union?/intersect?
-
 ### Examples:
 
 ```go
@@ -75,3 +67,11 @@ func stringsToLengths(x []string) []int {
 	return Mapstringint(x, length)
 }
 ```
+
+### TODO:
+ + filter/remove/partition
+ + takeWhile/dropWhile/span
+ + count
+ + forall/exists
+ + zip?
+ + union?/intersect?
